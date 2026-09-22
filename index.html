@@ -537,8 +537,8 @@ footer .glyph { display: block; font-size: 1.15rem; margin-bottom: .6rem; opacit
 <!-- ================= CARTA ================= -->
 <section id="carta" aria-labelledby="carta-title">
   <div class="section-head stack">
-    <p class="eyebrow reveal">Una carta</p>
-    <h2 id="carta-title" class="section-title reveal">Esto quería decirte</h2>
+    <p class="eyebrow reveal">Una nota</p>
+    <h2 id="carta-title" class="section-title reveal">La razón de estas flores</h2>
   </div>
 
   <div class="env-stage reveal" id="env-stage">
@@ -555,12 +555,13 @@ footer .glyph { display: block; font-size: 1.15rem; margin-bottom: .6rem; opacit
   </div>
 
   <div class="letter" id="letter">
-    <div class="letter-inner">      <article class="letter-card" aria-label="Carta de amistad">
-        <h3>Hola Andrea🫣</h3>
-		<p>No soy muy bueno para regalar flores, así que hice esto.</p>
-		<p>Solo quería aprovechar este día para darte un presente asi de pequeño. Gracias por los buenos momentos, muy pocos pero suficientes.</p>
-        <p>Espero que estas flores amarillas te saquen una sonrisa, aunque sea por un momento.</p>
-        <p class="firma">— ✨😁🌻</p>
+    <div class="letter-inner">      <article class="letter-card" aria-label="Nota con buena vibra">
+        <h3>Hola Andrea 🌻</h3>
+        <p>Hoy es 21 de septiembre y resulta que es el día de regalar flores amarillas para alegrarle el día a alguien. Y pensé en ti.</p>
+        <p>No tiene ocasión especial ni significado enorme: simplemente quería sacarte una sonrisa y desear que tu día sea un poquito más bonito, bueno espero que lo haya sido.</p>
+        <p>Como no soy bueno eligiendo flores de verdad, te hice estas. Duran para siempre y no necesitan agua. Cuidando el agua. 😄</p>
+        <p>¡Que tengas un día increíble!</p>
+        <p class="firma">— Con buena vibra ✨</p>
       </article>
     </div>
   </div>
@@ -573,7 +574,7 @@ footer .glyph { display: block; font-size: 1.15rem; margin-bottom: .6rem; opacit
   <div class="stack reveal">
     <p class="eyebrow">Un último detalle</p>
     <h2 id="cierre-title" class="section-title">Algo pequeño</h2>
-    <p class="body-l" style="max-width:26rem">Las flores se quedan aquí para siempre. Pero esto… esto solo te lo puedo dar una vez.</p>
+    <p class="body-l" style="max-width:26rem">Y para terminar con broche de oro, una última sorpresa: tu propio ramo, incluido. Sin costo adicional.</p>
     <button class="btn" id="hug-btn" style="margin-top:.8rem">Cerrar los ojos y pero abrelos luego 🫣🤪</button>
     <p class="caption cierre-note" id="hug-note" aria-live="polite"></p>
   </div>
@@ -1107,7 +1108,7 @@ field.addEventListener('keydown', (e) => {
     done = true;
     const r = btn.getBoundingClientRect();
     if (window.__bouquet) window.__bouquet(r.left + r.width / 2, r.top + r.height / 2);
-    note.textContent = '💛 Un ramo de flores que nunca se marchita. Feliz 21 de septiembre.';
+    note.textContent = '💛 Ahí va: un montón de flores amarillas solo para ti. ¡Feliz 21 de septiembre!';
     btn.textContent = 'Entregado 🌻';
     btn.disabled = true;
     btn.style.opacity = '.65';
