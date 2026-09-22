@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Un regalo digital por el 21 de septiembre: flores amarillas y palabras de amistad.">
+<meta name="theme-color" content="#FAF7EF">
+<title>Para ti — Flores Amarillas</title>
+<style>
+/* ================================================================
+   SISTEMA DE DISEÑO — "Golden Hour"
+   Paleta ámbar suave, tipografía SF, espacio como protagonista.
+   ================================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* Superficies — casi blancos cálidos, jerarquía por tonalidad */
+  --bg: #FBF6EA;
+  --bg-raised: #FFFCF4;
+  --bg-sunken: #F4EEDB;
+  --glass: rgba(255, 252, 244, .58);
+
+  /* Tinta — nunca negro puro */
+  --ink: #3D3423;
+  --ink-2: #6E6350;
+  --ink-3: #A2937B;
+
+  /* Ámbar — restringido a acentos emocionales */
+  --amber: #E0A818;
+  --amber-deep: #C49307;
+  --amber-ink: #966F08;
+  --amber-soft: rgba(224, 168, 24, .20);
+  --amber-line: rgba(224, 168, 24, .45);
+
+  /* Capas y sombras refinadas — luz desde arriba, sombras cortas y suaves */
+  --shadow-1: 0 1px 2px rgba(61, 52, 35, .05), 0 4px 14px rgba(61, 52, 35, .06);
+  --shadow-2: 0 1px 3px rgba(61, 52, 35, .06), 0 14px 40px rgba(61, 52, 35, .10);
+  --shadow-glass: 0 8px 32px rgba(61, 52, 35, .10), inset 0 1px 0 rgba(255, 255, 255, .7);
+
+  --r-sm: 12px;
+  --r-md: 18px;
+  --r-lg: 28px;
+
+  /* Tipografía — escala SF Pro (tracking ligado al tamaño) */
+  --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+::selection { background: var(--amber-soft); color: var(--amber-ink); }
+
+:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; border-radius: 6px; }
+
+/* ---------- Tipografía ---------- */
+h1, h2, h3 { text-wrap: balance; }
+
+.display {
+  font-size: clamp(2.9rem, 8.5vw, 5.4rem);
+  line-height: 1.02;
+  letter-spacing: -.038em;
+  font-weight: 700;
+}
+
+h2.section-title {
+  font-size: clamp(1.75rem, 4.2vw, 2.5rem);
+  letter-spacing: -.028em;
+  line-height: 1.12;
+  font-weight: 700;
+}
+
+.eyebrow {
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--amber-ink);
+}
+
+.body-l { font-size: 1.13rem; color: var(--ink-2); line-height: 1.7; }
+.caption { font-size: .92rem; color: var(--ink-3); letter-spacing: .01em; }
+
+/* ---------- Layout ---------- */
+section { padding: var(--pad-section, clamp(5rem, 14vh, 9rem)) clamp(1.5rem, 6vw, 4rem); }
+.container { max-width: 720px; margin: 0 auto; }
+.stack { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.stack > * + * { margin-top: 1.1rem; }
+.section-head { max-width: 30rem; margin: 0 auto clamp(3rem, 7vh, 4.5rem); }
+
+/* Divisor de respiro entre secciones */
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .9rem;
+  padding: 0 clamp(1.5rem, 6vw, 4rem);
+  height: clamp(4rem, 9vh, 6rem);
+}
+.divider::before, .divider::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  max-width: 120px;
+  background: linear-gradient(90deg, transparent, var(--amber-line));
+}
+.divider::after { background: linear-gradient(90deg, var(--amber-line), transparent); }
+.divider .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--amber); opacity: .7; }
+
+/* ---------- Botón — pastilla sobria, feedback en press ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  font: inherit;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: -.01em;
+  color: var(--bg-raised);
+  background: var(--ink);
+  border: none;
+  border-radius: 999px;
+  padding: .95rem 1.9rem;
+  cursor: pointer;
+  transition: transform .15s ease-out, background .2s ease, box-shadow .25s ease;
+  box-shadow: var(--shadow-1);
+  text-decoration: none;
+}
+.btn:hover { background: #50452F; box-shadow: var(--shadow-2); transform: translateY(-1px); }
+.btn:active { transform: scale(.97); transition-duration: .08s; }
+.btn.secondary {
+  background: var(--glass);
+  color: var(--ink);
+  border: 1px solid rgba(61, 52, 35, .10);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  backdrop-filter: blur(20px) saturate(160%);
+}
+.btn.secondary:hover { background: rgba(255, 253, 247, .85); }
+
+/* ---------- Hero ---------- */
+.hero {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  padding: 2rem clamp(1.5rem, 6vw, 4rem);
+  /* Luz ambiental: un único resplandor cálido, casi imperceptible */
+  background:
+    radial-gradient(900px 640px at 50% 34%, var(--amber-soft), transparent 62%),
+    var(--bg);
+}
+.hero > * { position: relative; z-index: 2; }
+
+.hero .sun {
+  width: min(46vw, 190px);
+  aspect-ratio: 1;
+  margin-bottom: 2.2rem;
+  will-change: transform;
+  filter: drop-shadow(0 20px 40px rgba(190, 140, 8, .22));
+}
+
+.hero .display { margin-bottom: .9rem; }
+.hero .lead { max-width: 26rem; margin-bottom: 2.4rem; }
+.scroll-cue {
+  position: absolute;
+  bottom: 2.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--ink-3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5rem;
+  font-size: .8rem;
+  letter-spacing: .08em;
+}
+.scroll-cue .line { width: 1px; height: 34px; background: linear-gradient(var(--ink-3), transparent); }
+
+/* ---------- Pétalos ambientales (muy pocos, casi imperceptibles) ---------- */
+#petal-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ---------- Frases ---------- */
+#frases { background: var(--bg-raised); }
+.quote-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: clamp(1.1rem, 2.5vw, 1.6rem);
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.quote {
+  background: var(--bg);
+  border: 1px solid rgba(61, 52, 35, .07);
+  border-radius: var(--r-md);
+  padding: 2rem 1.75rem;
+  box-shadow: var(--shadow-1);
+  transition: box-shadow .35s ease, transform .35s cubic-bezier(.22, 1, .36, 1);
+}
+.quote:hover { box-shadow: var(--shadow-2); transform: translateY(-3px); }
+
+.quote .mark {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: var(--amber);
+  border-radius: 2px;
+  margin-bottom: 1.15rem;
+}
+.quote p { font-size: 1.06rem; line-height: 1.65; color: var(--ink); letter-spacing: -.008em; }
+.quote p em { font-style: normal; color: var(--amber-ink); font-weight: 600; }
+.quote figcaption { margin-top: 1.2rem; font-size: .88rem; color: var(--ink-3); font-weight: 500; }
+
+/* ---------- Jardín ---------- */
+#jardin .field {
+  position: relative;
+  height: clamp(340px, 52vh, 440px);
+  margin-top: .5rem;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  cursor: pointer;
+  touch-action: manipulation;
+  background: linear-gradient(180deg, #EFF0D8 0%, #E7EBCB 60%, #E0E6C0 100%);
+  box-shadow: var(--shadow-1), inset 0 1px 0 rgba(255, 255, 255, .6);
+  border: 1px solid rgba(61, 52, 35, .06);
+}
+.field .ground {
+  position: absolute;
+  left: -6%; right: -6%;
+  bottom: -20px;
+  height: 58px;
+  background: radial-gradient(50% 100% at 50% 0%, #A08C6B, #86745A 80%);
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  pointer-events: none;
+  opacity: .9;
+}
+.field .hint {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  color: var(--ink-3);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: -.005em;
+  text-align: center;
+  pointer-events: none;
+  transition: opacity .6s ease;
+}
+.field.planted .hint { opacity: 0; }
+.field-count {
+  text-align: center;
+  margin-top: 1.2rem;
+  font-size: .9rem;
+  color: var(--ink-3);
+  font-variant-numeric: tabular-nums;
+}
+
+.flower { position: absolute; width: 118px; transform: translate(-50%, -100%); pointer-events: none; }
+.flower svg { display: block; width: 100%; height: auto; overflow: visible; }
+.flower .sway { animation: sway 6s ease-in-out infinite alternate; transform-origin: 50% 100%; }
+@keyframes sway { from { transform: rotate(-1.8deg); } to { transform: rotate(1.8deg); } }
+
+/* ---------- Carta ---------- */
+#carta { background: var(--bg-sunken); }
+
+.env-stage {
+  display: grid;
+  grid-template-rows: 1fr;
+  transition: grid-template-rows .7s cubic-bezier(.22, 1, .36, 1);
+  width: min(340px, 88vw);
+  margin: 0 auto;
+}
+.env-stage-inner { overflow: visible; display: flex; justify-content: center; }
+.env-stage.gone { grid-template-rows: 0fr; }
+.env-stage.gone .env-stage-inner { overflow: hidden; }
+
+/* Sobre realista: proporción 1.6:1, papel con grano sutil */
+.envelope {
+  position: relative;
+  width: min(340px, 88vw);
+  aspect-ratio: 1.6;
+  border: none;
+  background: none;
+  cursor: pointer;
+  perspective: 1200px;
+  padding: 0;
+  border-radius: var(--r-sm);
+  transition: opacity .5s ease, transform .6s cubic-bezier(.22, 1, .36, 1);
+  filter: drop-shadow(0 18px 36px rgba(61, 52, 35, .16));
+}
+.env-stage.gone .envelope { opacity: 0; transform: translateY(30px) scale(.94); pointer-events: none; }
+
+.env-back {
+  position: absolute; inset: 0;
+  border-radius: var(--r-sm);
+  background: linear-gradient(180deg, #FFFBEF, #F5EED9);
+  border: 1px solid rgba(61, 52, 35, .05);
+}
+
+.env-letter-card {
+  position: absolute;
+  left: 5%; right: 5%; top: 6%; bottom: 22%;
+  background: var(--bg-raised);
+  border-radius: 8px;
+  border: 1px solid rgba(61, 52, 35, .07);
+  display: grid;
+  place-items: center;
+  font-weight: 600;
+  font-size: .98rem;
+  letter-spacing: .01em;
+  color: var(--ink-2);
+  box-shadow: 0 2px 8px rgba(61, 52, 35, .08);
+  z-index: 1;
+  transition: transform .8s cubic-bezier(.22, 1, .36, 1) .45s, opacity .4s ease, box-shadow .5s ease;
+}
+
+.env-front {
+  position: absolute; inset: 0;
+  border-radius: 0 0 var(--r-sm) var(--r-sm);
+  background: linear-gradient(180deg, #FDF6E3, #F3E9CC);
+  clip-path: polygon(0 34%, 50% 76%, 100% 34%, 100% 100%, 0 100%);
+  border-top: 1px solid rgba(255, 255, 255, .6);
+  z-index: 2;
+}
+
+/* Solapa con sombra proyectada realista al abrirse */
+.env-flap {
+  position: absolute;
+  left: 0; right: 0; top: 0;
+  height: 54%;
+  background: linear-gradient(180deg, #F9F1DC, #EFE4C6);
+  clip-path: polygon(0 0, 100% 0, 50% 92%);
+  border-radius: var(--r-sm) var(--r-sm) 0 0;
+  transform-origin: top center;
+  z-index: 3;
+  transition: transform .65s cubic-bezier(.3, .7, .3, 1), z-index 0s .3s;
+}
+.env-flap::after { /* sombra que la solapa proyecta al levantarse */
+  content: "";
+  position: absolute;
+  inset: 0;
+  clip-path: inherit;
+  background: linear-gradient(0deg, rgba(61, 52, 35, .18), transparent 55%);
+  opacity: 0;
+  transition: opacity .5s ease .1s;
+}
+.envelope[aria-expanded="true"] .env-flap { transform: rotateX(178deg); z-index: 1; }
+.envelope[aria-expanded="true"] .env-flap::after { opacity: 1; }
+
+/* Sello de cera — único punto de ornamento, intencional */
+.seal {
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #ECBF30, var(--amber-deep) 70%);
+  box-shadow: 0 2px 6px rgba(138, 106, 16, .4), inset 0 1px 2px rgba(255, 255, 255, .45);
+  display: grid;
+  place-items: center;
+  color: #FFF7E0;
+  font-size: 1.1rem;
+  z-index: 4;
+  transition: opacity .35s ease, transform .35s ease;
+}
+.envelope[aria-expanded="true"] .seal { opacity: 0; transform: translate(-50%, -50%) scale(.75); }
+
+/* La hoja sale completa por encima del sobre */
+.envelope[aria-expanded="true"] .env-letter-card {
+  transform: translateY(-128%) scale(1.02);
+  box-shadow: 0 20px 44px rgba(61, 52, 35, .22);
+  z-index: 12;
+}
+
+/* Carta desplegada — vidrio premium estilo Wallet */
+.letter {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows .8s cubic-bezier(.22, 1, .36, 1);
+  width: min(600px, 100%);
+  margin: 0 auto;
+}
+.letter-inner { overflow: hidden; }
+.letter.open { grid-template-rows: 1fr; }
+
+.letter-card {
+  background: var(--glass);
+  -webkit-backdrop-filter: blur(26px) saturate(170%);
+  backdrop-filter: blur(26px) saturate(170%);
+  border: 1px solid rgba(255, 255, 255, .65);
+  box-shadow: var(--shadow-glass);
+  border-radius: var(--r-lg);
+  padding: clamp(1.8rem, 5vw, 2.6rem);
+  margin-top: 1.6rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .6s ease .12s, transform .6s cubic-bezier(.22, 1, .36, 1) .12s;
+}
+.letter.open .letter-card { opacity: 1; transform: none; }
+.letter-card h3 {
+  font-size: 1.28rem;
+  letter-spacing: -.018em;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.letter-card p { margin-bottom: 1em; color: var(--ink); line-height: 1.7; }
+.letter-card p:last-of-type { margin-bottom: 0; }
+.letter-card .firma {
+  margin-top: 1.4rem;
+  font-weight: 600;
+  color: var(--amber-ink);
+  font-size: 1.02rem;
+}
+
+/* ---------- Cierre ---------- */
+#cierre { padding-bottom: clamp(6rem, 16vh, 10rem); }
+.cierre-note { min-height: 1.6em; }
+
+/* Capa de celebración floral y estela del cursor (100% flores amarillas) */
+#celebration-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 85;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  padding: 2.8rem 1.5rem 3rem;
+  text-align: center;
+  color: var(--ink-3);
+  font-size: .88rem;
+  border-top: 1px solid rgba(61, 52, 35, .06);
+  background: var(--bg-raised);
+}
+footer .glyph { display: block; font-size: 1.15rem; margin-bottom: .6rem; opacity: .8; }
+
+/* ---------- Reveal — fade + subida sutil, nada más ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .8s cubic-bezier(.22, 1, .36, 1), transform .8s cubic-bezier(.22, 1, .36, 1);
+}
+.reveal.in { opacity: 1; transform: none; }
+
+/* ---------- Movimiento reducido: todo se vuelve quieto ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { transition: opacity .25s ease; transform: none; }
+  .flower .sway { animation: none; }
+  .env-flap, .env-letter-card, .letter, .letter-card, .env-stage, .seal { transition-duration: .01s !important; }
+  .btn { transition-duration: .01s; }
+  #celebration-canvas { display: none; }
+  .scroll-cue .line { background: var(--ink-3); }
+}
+</style>
+</head>
+<body>
+<canvas id="celebration-canvas" aria-hidden="true"></canvas>
+<!-- ================= HERO ================= -->
+<header class="hero" id="hero">
+  <canvas id="petal-canvas" aria-hidden="true"></canvas>
+  <div class="sun" id="hero-sun" aria-hidden="true">
+    <svg id="hero-flower" viewBox="0 0 300 300" role="img" aria-label="Girasol"></svg>
+  </div>
+  <p class="eyebrow reveal">21 de septiembre · Flores amarillas</p>
+  <h1 class="display reveal" id="hero-title">Para ti.</h1>
+  <p class="body-l lead reveal">Hoy no solo se regalan solo flores amarillas. Yo quise regalarte algo que no se marchita — un pequeño espacio hecho con prisa😁.</p>
+  <div class="reveal">
+    <a class="btn" href="#jardin">Comenzar</a>
+  </div>
+  <p class="scroll-cue" aria-hidden="true">Desliza<span class="line"></span></p>
+</header>
+
+<main>
+
+<div class="divider" aria-hidden="true"><span class="dot"></span></div>
+
+<!-- 
+<section id="frases" aria-labelledby="frases-title">
+  <div class="section-head stack">
+    <p class="eyebrow reveal">Palabras que quedan</p>
+    <h2 id="frases-title" class="section-title reveal">Lo que significa tu amistad</h2>
+  </div>
+  <div class="quote-grid">
+    <figure class="quote reveal"><span class="mark"></span><blockquote><p>Hay amistades que son como los girasoles: <em>siempre encuentran la luz</em> — y sin proponérselo, se convierten en ella.</p></blockquote></figure>
+    <figure class="quote reveal"><span class="mark"></span><blockquote><p>Gracias por ser ese pedazo de sol que <em>hace bonitos hasta los lunes</em>.</p></blockquote></figure>
+    <figure class="quote reveal"><span class="mark"></span><blockquote><p>Contigo, hasta los días grises aprenden a <em>vestirse de amarillo</em>.</p></blockquote></figure>
+    <figure class="quote reveal"><span class="mark"></span><blockquote><p>Que la vida te dé tantas sonrisas como pétalos<em>.</em>.</p></blockquote></figure>
+    <figure class="quote reveal"><span class="mark"></span><blockquote><p>Rie hoy, y <em>disfruta el mañana</em>.</p></blockquote></figure>
+  </div>
+</section>
+
+<div class="divider" aria-hidden="true"><span class="dot"></span></div>
+
+<!-- ================= JARDÍN ================= -->
+<section id="jardin" aria-labelledby="jardin-title">
+  <div class="section-head stack">
+    <p class="eyebrow reveal">Tu jardín</p>
+    <h2 id="jardin-title" class="section-title reveal">Planta un girasol</h2>
+    <p class="caption reveal">Toca la tierra. Cada flor crecerá donde la pongas.</p>
+  </div>
+  <div class="container">
+    <div class="field reveal" id="field" role="button" tabindex="0"
+         aria-label="Campo interactivo: presiona Enter o haz clic para plantar un girasol">
+      <p class="hint">Toca aquí para plantar la primera flor</p>
+      <div class="ground" aria-hidden="true"></div>
+    </div>
+    <p class="field-count"><span id="flower-count" aria-live="polite"></span></p>
+  </div>
+</section>
+
+<div class="divider" aria-hidden="true"><span class="dot"></span></div>
+
+<!-- ================= CARTA ================= -->
+<section id="carta" aria-labelledby="carta-title">
+  <div class="section-head stack">
+    <p class="eyebrow reveal">Una carta</p>
+    <h2 id="carta-title" class="section-title reveal">Esto quería decirte</h2>
+  </div>
+
+  <div class="env-stage reveal" id="env-stage">
+    <div class="env-stage-inner">
+      <button class="envelope" id="envelope" aria-expanded="false" aria-controls="letter">
+        <span class="env-back" aria-hidden="true"></span>
+        <span class="env-letter-card" aria-hidden="true">Para ti</span>
+        <span class="env-front" aria-hidden="true"></span>
+        <span class="env-flap" aria-hidden="true"></span>
+        <span class="seal" aria-hidden="true">🌻</span>
+        <span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Abrir la carta</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="letter" id="letter">
+    <div class="letter-inner">      <article class="letter-card" aria-label="Carta de amistad">
+        <h3>Hola🫣</h3>
+		<p>No soy muy bueno para regalar flores, así que hice esto.</p>
+		<p>Solo quería aprovechar este día para darte un presente asi de pequeño. Gracias por los buenos momentos, muy pocos pero suficientes.</p>
+        <p>Espero que estas flores amarillas te saquen una sonrisa, aunque sea por un momento.</p>
+        <p class="firma">— ✨😁🌻</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="divider" aria-hidden="true"><span class="dot"></span></div>
+
+<!-- ================= CIERRE ================= -->
+<section id="cierre" aria-labelledby="cierre-title">
+  <div class="stack reveal">
+    <p class="eyebrow">Un último detalle</p>
+    <h2 id="cierre-title" class="section-title">Algo pequeño</h2>
+    <p class="body-l" style="max-width:26rem">Las flores se quedan aquí para siempre. Pero esto… esto solo te lo puedo dar una vez.</p>
+    <button class="btn" id="hug-btn" style="margin-top:.8rem">Cerrar los ojos y pero abrelos luego 🫣🤪</button>
+    <p class="caption cierre-note" id="hug-note" aria-live="polite"></p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <span class="glyph" aria-hidden="true">🌻</span>
+  <p>· 21 de septiembre ·</p>
+</footer>
+
+<script>
+'use strict';
+/* ================================================================
+   ✏️  EDITA AQUÍ — nombre de la persona especial
+   ================================================================ */
+const NOMBRE = ''; // ej.: const NOMBRE = 'María';
+
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if (NOMBRE.trim()) {
+  document.getElementById('hero-title').textContent = 'Para ti, ' + NOMBRE.trim() + '.';
+  document.querySelector('.env-letter-card').textContent = 'Para ' + NOMBRE.trim();
+}
+
+/* ================================================================
+   MOTOR DE RESORTES — damping / response estilo Apple.
+   Crítico (1.0) por defecto; rebote solo donde hay gesto físico.
+   ================================================================ */
+const activeSprings = new Set();
+
+function spring(opts) {
+  const s = {
+    value: opts.from ?? 0,
+    target: opts.to ?? 1,
+    vel: opts.velocity ?? 0,
+    damping: opts.damping ?? 1,
+    response: opts.response ?? 0.4,
+    onUpdate: opts.onUpdate,
+    onRest: opts.onRest,
+    delay: opts.delay ?? 0,
+    _rested: false,
+    set(t) { this.target = t; this._rested = false; activeSprings.add(this); },
+  };
+  activeSprings.add(s);
+  return s;
+}
+
+function stepSpring(s, dt) {
+  if (s.delay > 0) { s.delay -= dt; return; }
+  const wn = (2 * Math.PI) / Math.max(s.response, 0.02);
+  const acc = -(wn * wn) * (s.value - s.target) - (2 * s.damping * wn) * s.vel;
+  s.vel += acc * dt;
+  s.value += s.vel * dt;
+  if (s.onUpdate) s.onUpdate(s.value);
+  if (Math.abs(s.vel) < 0.0015 && Math.abs(s.value - s.target) < 0.0015) {
+    s.value = s.target;
+    if (s.onUpdate) s.onUpdate(s.value);
+    if (!s._rested) { s._rested = true; if (s.onRest) s.onRest(); }
+    activeSprings.delete(s);
+  }
+}
+
+let tickAmbient = null; // se asigna más abajo; el loop lo consulta siempre
+let lastT = performance.now();
+(function raf(now) {
+  const dt = Math.min((now - lastT) / 1000, 0.05);
+  lastT = now;
+  for (const s of [...activeSprings]) stepSpring(s, dt);
+  if (tickAmbient) tickAmbient(dt);
+  requestAnimationFrame(raf);
+})(performance.now());
+
+/* ================================================================
+   CONSTRUCTOR DE GIRASOL SVG
+   ================================================================ */
+const SVGNS = 'http://www.w3.org/2000/svg';
+const el = (name, attrs) => {
+  const n = document.createElementNS(SVGNS, name);
+  for (const k in attrs) n.setAttribute(k, attrs[k]);
+  return n;
+};
+
+function buildFlower(svg, cx, cy, R) {
+  const g = el('g', {});
+  svg.appendChild(g);
+  const petals = [];
+  const rings = [
+    { count: 13, ry: R, rx: R * 0.27, fill: '#ECB724', off: 0 },
+    { count: 9, ry: R * 0.8, rx: R * 0.24, fill: '#F3CB3E', off: Math.PI / 9 },
+  ];
+  for (const ring of rings) {
+    for (let i = 0; i < ring.count; i++) {
+      const a = (i / ring.count) * Math.PI * 2 + ring.off;
+      const petal = el('path', {
+        d: 'M0,0 C ' + (-ring.rx) + ',' + (-ring.ry * 0.38) + ' ' + (-ring.rx) + ',' + (-ring.ry * 0.86) + ' 0,' + (-ring.ry) +
+           ' C ' + ring.rx + ',' + (-ring.ry * 0.86) + ' ' + ring.rx + ',' + (-ring.ry * 0.38) + ' 0,0 Z',
+        fill: ring.fill,
+        opacity: .96,
+      });
+      const holder = el('g', { transform: 'rotate(' + (a * 180 / Math.PI) + ' ' + cx + ' ' + cy + ')' });
+      const positioner = el('g', { transform: 'translate(' + cx + ' ' + cy + ')' });
+      const scaler = el('g', { transform: 'scale(0)' });
+      g.appendChild(holder);
+      holder.appendChild(positioner);
+      positioner.appendChild(scaler);
+      scaler.appendChild(petal);
+      petals.push(scaler);
+    }
+  }
+  const disk = el('g', { transform: 'scale(0)', 'transform-origin': cx + ' ' + cy });
+  g.appendChild(disk);
+  disk.appendChild(el('circle', { cx, cy, r: R * 0.5, fill: '#8A6D3B' }));
+  disk.appendChild(el('circle', { cx, cy, r: R * 0.36, fill: '#75603A' }));
+  for (let i = 0; i < 12; i++) { // semillas en espiral dorada
+    const a = i * 2.39996;
+    const r = R * 0.3 * Math.sqrt(i / 12);
+    disk.appendChild(el('circle', {
+      cx: cx + Math.cos(a) * r, cy: cy + Math.sin(a) * r,
+      r: Math.max(R * 0.03, 1.2), fill: '#5E4B28', opacity: .8,
+    }));
+  }
+  return { petals, disk, cx, cy };
+}
+
+function bloom(flower, baseDelay) {
+  const d = baseDelay ?? 0;
+  flower.petals.forEach((p, i) => spring({
+    from: 0, to: 1, damping: 0.85, response: 0.55, delay: d + i * 0.028,
+    onUpdate: v => p.setAttribute('transform', 'scale(' + v + ')'),
+  }));
+  spring({
+    from: 0, to: 1, damping: 0.9, response: 0.5, delay: d + flower.petals.length * 0.028 + 0.05,
+    onUpdate: v => flower.disk.setAttribute('transform', 'scale(' + v + ')'),
+  });
+}
+
+function bloomInstant(flower) {
+  flower.petals.forEach(p => p.setAttribute('transform', 'scale(1)'));
+  flower.disk.setAttribute('transform', 'scale(1)');
+}
+
+/* ================================================================
+   HERO — un solo gesto: la flor se abre y respira apenas
+   ================================================================ */
+{
+  const svg = document.getElementById('hero-flower');
+  const f = buildFlower(svg, 150, 158, 76);
+  if (reduceMotion) {
+    bloomInstant(f);
+  } else {
+    bloom(f, 0.35);
+    // respiración casi imperceptible (±0.8°) — nunca compite con el título
+    const sun = document.getElementById('hero-sun');
+    let t0 = null;
+    const breathe = (now) => {
+      if (!t0) t0 = now;
+      const s = (now - t0) / 1000;
+      svg.style.transform = 'rotate(' + (Math.sin(s * 0.45) * 0.8) + 'deg)';
+      requestAnimationFrame(breathe);
+    };
+    requestAnimationFrame(breathe);
+  }
+}
+
+/* ================================================================
+   PÉTALOS AMBIENTALES — 8 como máximo, lentos y translúcidos
+   ================================================================ */
+if (!reduceMotion) {
+  const canvas = document.getElementById('petal-canvas');
+  const ctx = canvas.getContext('2d');
+  const hero = document.getElementById('hero');
+  let W = 0, H = 0;
+  const petals = [];
+
+  const resize = () => {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = hero.clientWidth; H = hero.clientHeight;
+    canvas.width = W * dpr; canvas.height = H * dpr;
+    canvas.style.width = W + 'px'; canvas.style.height = H + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  };
+  resize();
+  window.addEventListener('resize', resize, { passive: true });
+
+  const spawn = (anyY) => ({
+    x: Math.random() * W,
+    y: anyY ? Math.random() * H : -16,
+    vy: 16 + Math.random() * 18,           // caída lenta pero perceptible
+    amp: 18 + Math.random() * 22,
+    freq: 0.3 + Math.random() * 0.25,      // vaivén ~0.3 Hz, calmado
+    phase: Math.random() * 6.28,
+    rot: Math.random() * 6.28,
+    vr: (Math.random() - 0.5) * 0.5,
+    size: 6 + Math.random() * 6,           // un poco más presentes
+    t: Math.random() * 100,
+  });
+  for (let i = 0; i < 12; i++) petals.push(spawn(true)); // +50% de presencia
+
+  tickAmbient = (dt) => {
+    ctx.clearRect(0, 0, W, H);
+    for (const p of petals) {
+      p.t += dt; p.y += p.vy * dt; p.rot += p.vr * dt;
+      if (p.y > H + 20) Object.assign(p, spawn(false));
+      ctx.save();
+      ctx.translate(p.x + Math.sin(p.t * p.freq) * p.amp * 0.4, p.y);
+      ctx.rotate(p.rot + Math.sin(p.t * p.freq) * 0.4);
+      ctx.globalAlpha = 0.55;              // visibles sin robar escena
+      ctx.fillStyle = '#E0AC26';
+      ctx.beginPath();
+      ctx.ellipse(0, 0, p.size, p.size * 0.45, 0, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+    }
+  };
+}
+
+/* ================================================================
+   JARDÍN — plantar flores (interacción táctil conservada,
+   feedback inmediato en pointerdown, crecimiento con resorte)
+   ================================================================ */
+const field = document.getElementById('field');
+const countEl = document.getElementById('flower-count');
+const flowers = [];
+let planted = 0;
+
+function plantFlower(x, y) {
+  planted++;
+  countEl.textContent = planted + (planted === 1 ? ' flor plantada' : ' flores plantadas');
+  field.classList.add('planted');
+
+  const wrap = document.createElement('div');
+  wrap.className = 'flower';
+  wrap.style.left = x + 'px';
+  wrap.style.top = y + 'px';
+
+  const svg = el('svg', { viewBox: '0 0 130 250', 'aria-hidden': 'true' });
+  const growG = el('g', {});
+  const swayG = el('g', { 'class': 'sway', style: 'transform-box: fill-box; transform-origin: 50% 100%;' });
+  swayG.style.animationDelay = (-Math.random() * 6) + 's';
+
+  swayG.appendChild(el('path', { d: 'M65,250 C 60,192 70,152 65,96', stroke: '#8F9A58', 'stroke-width': 6, fill: 'none', 'stroke-linecap': 'round' }));
+  swayG.appendChild(el('path', { d: 'M65,196 C 43,187 32,173 31,162 C 48,164 61,179 65,190 Z', fill: '#9BA864' }));
+  swayG.appendChild(el('path', { d: 'M65,218 C 87,209 98,195 99,184 C 82,186 69,201 65,212 Z', fill: '#A8B270' }));
+
+  const headSvg = el('svg', { x: 13, y: 8, width: 104, height: 104, viewBox: '0 0 300 300', overflow: 'visible' });
+  swayG.appendChild(headSvg);
+  growG.appendChild(swayG);
+  svg.appendChild(growG);
+  wrap.appendChild(svg);
+  field.appendChild(wrap);
+
+  const finalScale = 0.72 + Math.random() * 0.32;
+  const f = buildFlower(headSvg, 150, 150, 74);
+
+  if (reduceMotion) {
+    growG.setAttribute('transform', 'translate(65 250) scale(' + finalScale + ') translate(-65 -250)');
+    bloomInstant(f);
+  } else {
+    // damping 0.85: la flor "asienta" con un leve rebote natural, nada caricaturesco
+    spring({
+      from: 0, to: finalScale, damping: 0.85, response: 0.55,
+      onUpdate: v => growG.setAttribute('transform', 'translate(65 250) scale(' + v + ') translate(-65 -250)'),
+    });
+    bloom(f, 0.25);
+  }
+
+  flowers.push(wrap);
+  if (flowers.length > 24) flowers.shift().remove();
+}
+
+field.addEventListener('pointerdown', (e) => {
+  const r = field.getBoundingClientRect();
+  const x = e.clientX - r.left;
+  const y = Math.min(e.clientY - r.top, r.height - 6);
+  if (x > 32 && x < r.width - 32) plantFlower(x, y);
+});
+field.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' || e.key === ' ') {
+    e.preventDefault();
+    const r = field.getBoundingClientRect();
+    plantFlower(60 + Math.random() * (r.width - 120), r.height * (0.62 + Math.random() * 0.3));
+  }
+});
+
+/* ================================================================
+   SOBRE / CARTA — apertura coreografiada, una sola vez, en calma
+   ================================================================ */
+{
+  const env = document.getElementById('envelope');
+  const letter = document.getElementById('letter');
+  const stage = document.getElementById('env-stage');
+  let opened = false;
+
+  env.addEventListener('click', () => {
+    if (opened) return;
+    opened = true;
+    env.setAttribute('aria-expanded', 'true');
+    // la hoja sube por encima del sobre → luego el sobre se retira
+    // y la carta real toma su lugar. Sin prisa, sin ruido.
+    const pause = reduceMotion ? 60 : 1250;
+    setTimeout(() => {
+      stage.classList.add('gone');
+      letter.classList.add('open');
+      setTimeout(() => {
+        letter.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
+      }, reduceMotion ? 100 : 500);
+    }, pause);
+  });
+}
+
+/* ================================================================
+   REVEAL — entrada con fade + subida, stagger muy sutil
+   ================================================================ */
+{
+  const io = new IntersectionObserver((entries) => {
+    for (const e of entries) {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    }
+  }, { threshold: 0.12 });
+  const groups = new Map();
+  document.querySelectorAll('.reveal').forEach((node) => {
+    const p = node.parentElement;
+    const i = groups.get(p) || 0;
+    groups.set(p, i + 1);
+    node.style.transitionDelay = (i % 4) * 70 + 'ms';
+    io.observe(node);
+  });
+}
+
+/* ================================================================
+   CAPA FLORAL — un solo canvas para:
+   A) Celebración del regalo (un gran ramo de flores que asciende)
+   B) Estela de pétalos que sigue al cursor
+   Todo son flores: pétalos, mini-girasoles y motas doradas.
+   ================================================================ */
+{
+  const canvas = document.getElementById('celebration-canvas');
+  const ctx = canvas.getContext('2d');
+  let W = 0, H = 0;
+  const parts = [];
+  const PETALS = ['#ECB724', '#F3CB3E', '#E0AC26', '#D9A521'];
+
+  const resize = () => {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = window.innerWidth; H = window.innerHeight;
+    canvas.width = W * dpr; canvas.height = H * dpr;
+    canvas.style.width = W + 'px'; canvas.style.height = H + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  };
+  resize();
+  window.addEventListener('resize', resize, { passive: true });
+
+  /* ---- constructores de cada pieza floral ---- */
+
+  function addPetal(x, y, opts) {
+    parts.push(Object.assign({
+      kind: 'petal',
+      x, y,
+      vx: (Math.random() - 0.5) * 30,
+      vy: -35 - Math.random() * 70,
+      g: 22,
+      rot: Math.random() * 6.28,
+      vr: (Math.random() - 0.5) * 2.2,
+      sway: 14 + Math.random() * 22,
+      sfreq: 0.6 + Math.random() * 0.5,
+      size: 6 + Math.random() * 7,
+      life: 1,
+      decay: 0.13 + Math.random() * 0.08,  // dura ~5s: tiempo de disfrutarlo
+      color: PETALS[(Math.random() * PETALS.length) | 0],
+      t: Math.random() * 100,
+    }, opts || {}));
+  }
+
+  function addSunflower(x, y) {
+    parts.push({
+      kind: 'sun',
+      x, y,
+      vx: (Math.random() - 0.5) * 20,
+      vy: -30 - Math.random() * 45,
+      g: 16,
+      rot: Math.random() * 6.28,
+      vr: (Math.random() - 0.5) * 0.8,
+      sway: 12 + Math.random() * 16,
+      sfreq: 0.5 + Math.random() * 0.4,
+      size: 12 + Math.random() * 9,        // girasoles bien visibles
+      life: 1,
+      decay: 0.11 + Math.random() * 0.07,  // dura ~7s: protagonistas
+      t: Math.random() * 100,
+    });
+  }
+
+  function addDust(x, y) {
+    parts.push({
+      kind: 'dust',
+      x, y,
+      vx: (Math.random() - 0.5) * 46,
+      vy: -45 - Math.random() * 75,
+      g: 26,
+      rot: 0, vr: 0,
+      sway: 8 + Math.random() * 12,
+      sfreq: 1.2 + Math.random() * 0.8,
+      size: 1.6 + Math.random() * 2.4,
+      life: 1,
+      decay: 0.22 + Math.random() * 0.14,
+      t: Math.random() * 100,
+    });
+  }
+
+  /* ---- A) EL RAMO: tres oleadas abundantes, muchas flores ---- */
+  window.__bouquet = (fromX, fromY) => {
+    if (reduceMotion) return;
+    // Oleada 1 — estalla desde el botón
+    for (let i = 0; i < 40; i++) addPetal(fromX, fromY);
+    for (let i = 0; i < 12; i++) addSunflower(fromX, fromY);
+    for (let i = 0; i < 28; i++) addDust(fromX, fromY);
+    // Oleada 2 — el ramo "llena" la pantalla ascendiendo desde abajo
+    setTimeout(() => {
+      for (let i = 0; i < 48; i++) addPetal(Math.random() * W, H + 20);
+      for (let i = 0; i < 16; i++) addSunflower(Math.random() * W, H + 30);
+      for (let i = 0; i < 24; i++) addDust(Math.random() * W, H + 10);
+    }, 320);
+    // Oleada 3 — brisa final suspendida en el aire
+    setTimeout(() => {
+      for (let i = 0; i < 32; i++) addPetal(Math.random() * W, H * (0.55 + Math.random() * 0.4));
+      for (let i = 0; i < 10; i++) addSunflower(Math.random() * W, H * (0.6 + Math.random() * 0.35));
+      for (let i = 0; i < 18; i++) addDust(Math.random() * W, H * 0.5 + Math.random() * H * 0.4);
+    }, 680);
+  };
+
+  /* ---- B) ESTELA DEL CURSOR: pétalos diminutos, muy sutiles ---- */
+  if (!reduceMotion) {
+    let lastTrail = 0;
+    window.addEventListener('pointermove', (e) => {
+      const now = performance.now();
+      if (now - lastTrail < 85 || parts.length > 420) return; // freno suave
+      lastTrail = now;
+      addPetal(e.clientX, e.clientY, {
+        vx: (Math.random() - 0.5) * 12,
+        vy: -8 - Math.random() * 12,       // casi estáticos, suben poquito
+        g: 6,                              // flotan
+        size: 2.8 + Math.random() * 2.4,   // diminutos
+        decay: 1.1 + Math.random() * 0.5,  // desaparecen rápido
+        sway: 6 + Math.random() * 8,
+        sfreq: 0.9 + Math.random() * 0.5,
+      });
+    }, { passive: true });
+  }
+
+  /* ---- dibujado ---- */
+  function drawPetal(p) {
+    ctx.save();
+    ctx.translate(p.x + Math.sin(p.t * p.sfreq) * p.sway * (1 - p.life * 0.4), p.y);
+    ctx.rotate(p.rot + Math.sin(p.t * p.sfreq) * 0.4);
+    ctx.globalAlpha = Math.min(1, p.life * 1.5) * 0.88;
+    ctx.fillStyle = p.color;
+    ctx.beginPath();
+    ctx.ellipse(0, 0, p.size, p.size * 0.45, 0, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+  }
+
+  function drawSunflower(p) {
+    ctx.save();
+    ctx.translate(p.x + Math.sin(p.t * p.sfreq) * p.sway * (1 - p.life * 0.4), p.y);
+    ctx.rotate(p.rot);
+    ctx.globalAlpha = Math.min(1, p.life * 1.5) * 0.95;
+    const r = p.size;
+    ctx.fillStyle = '#ECB724';
+    for (let i = 0; i < 10; i++) {
+      const a = (i / 10) * Math.PI * 2;
+      ctx.beginPath();
+      ctx.ellipse(Math.cos(a) * r * 0.72, Math.sin(a) * r * 0.72, r * 0.45, r * 0.22, a, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    ctx.fillStyle = '#8A6D3B';
+    ctx.beginPath();
+    ctx.arc(0, 0, r * 0.4, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+  }
+
+  function drawDust(p) {
+    ctx.save();
+    ctx.translate(p.x + Math.sin(p.t * p.sfreq) * p.sway * (1 - p.life * 0.4), p.y);
+    ctx.globalAlpha = Math.min(1, p.life * 1.8) * 0.78;
+    ctx.fillStyle = '#F0C94F';
+    ctx.beginPath();
+    ctx.arc(0, 0, p.size, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+  }
+
+  /* ---- bucle único ---- */
+  if (!reduceMotion) {
+    let last = performance.now();
+    (function fx(now) {
+      const dt = Math.min((now - last) / 1000, 0.05);
+      last = now;
+      ctx.clearRect(0, 0, W, H);
+      for (let i = parts.length - 1; i >= 0; i--) {
+        const p = parts[i];
+        p.t += dt;
+        p.vy += p.g * dt;
+        p.vx *= (1 - 0.5 * dt);
+        p.x += p.vx * dt;
+        p.y += p.vy * dt;
+        p.rot += p.vr * dt;
+        p.life -= p.decay * dt;
+        if (p.life <= 0 || p.y > H + 40) { parts.splice(i, 1); continue; }
+        if (p.kind === 'petal') drawPetal(p);
+        else if (p.kind === 'sun') drawSunflower(p);
+        else drawDust(p);
+      }
+      requestAnimationFrame(fx);
+    })(performance.now());
+  }
+}
+
+/* ================================================================
+   CIERRE — el ramo entero: muchas flores amarillas y girasoles
+   ================================================================ */
+{
+  const btn = document.getElementById('hug-btn');
+  const note = document.getElementById('hug-note');
+  let done = false;
+
+  btn.addEventListener('click', () => {
+    if (done) return;
+    done = true;
+    const r = btn.getBoundingClientRect();
+    if (window.__bouquet) window.__bouquet(r.left + r.width / 2, r.top + r.height / 2);
+    note.textContent = '💛 Un ramo de flores que nunca se marchita. Feliz 21 de septiembre.';
+    btn.textContent = 'Entregado 🌻';
+    btn.disabled = true;
+    btn.style.opacity = '.65';
+    if (navigator.vibrate) navigator.vibrate(30);
+  });
+}
+</script>
+</body>
+</html>
